@@ -1,14 +1,8 @@
 #!/bin/bash
 set -e
-
-# The exercises are small CPU jobs. Avoid oversubscribing Binder's shared CPUs.
 export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
-
-# Preserve Binder/JupyterHub's command, base URL and per-session authentication.
-# REST requests use the launch token; browser WebSockets use its token query.
-exec "$@" \
-  --ServerApp.allow_origin=https://torchrl-learning-lab.naistfreib.chatgpt.site \
-  --ServerApp.allow_credentials=False
+# Preserve repo2docker and Binder's complete Jupyter startup configuration.
+exec "$@"

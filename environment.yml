@@ -4,9 +4,6 @@ channels:
 dependencies:
   - python=3.12
   - pip
-  - ipykernel>=6.29,<8
-  - jupyter_server>=2.14,<3
-  - jupyterlab>=4,<5
   - pip:
       - --extra-index-url https://download.pytorch.org/whl/cpu
       - torch==2.14.0+cpu
