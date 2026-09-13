@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+python "$(dirname "$0")/verify_cpu_environment.py"
+python -m ipykernel install --sys-prefix --name python3 --display-name "TorchRL (Python 3.12)"
